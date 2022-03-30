@@ -50,4 +50,58 @@ void main(List<String> args) {
 // // Fixed length list length can't be changed or increased
 //   fixedLengthList.length = 0; // Throws
 //   fixedLengthList.add(499); // Throws
+
+//  growable list:
+
+  final growableList = <String>['v', 'B']; // Creates growable list.
+// To add data to the growable list, use operator[]=, add or addAll.
+
+  // growableList[0] = 'G';
+  // print(growableList); // [G, B]
+  // growableList.add('X');
+  // growableList.addAll({'C', 'B'});
+  // print(growableList); // [G, B, X, C, B]
+
+  // To check whether, and where, the element is in the list, use indexOf or lastIndexOf.
+
+  // final indexA = growableList.indexOf('A');
+  // print(indexA); // -1 (not in the list)
+  // final firstIndexB = growableList.indexOf('B');
+  // print(firstIndexB); // 1
+  // final lastIndexB = growableList.lastIndexOf('B');
+  // print(lastIndexB); // 4
+
+  // To remove an element from the growable list, use remove, removeAt, removeLast, removeRange or removeWhere.
+
+  // growableList.remove('C');
+  // growableList.removeLast();
+  // print(growableList); // [G, B, X]
+
+  // To insert an element at position in the list, use insert or insertAll.
+
+  // growableList.insert(0, 'nmae');
+  // growableList.insertAll(1, {'a', 's', 'dd'});
+  // print(growableList); // [G, New, B, X]
+
+  // To replace a range of elements in the list, use fillRange, replaceRange or setRange.
+
+  // growableList.replaceRange(0, 2, ['AB', 'A']);
+  // print(growableList); // [AB, A, B, X]
+  // growableList.fillRange(0, 4, 'F');
+  // print(growableList); // [AB, A, F, F]
+
+  // To sort the elements of the list, use sort.
+
+  // growableList.sort((F, b) => F.compareTo(b));
+  // print(growableList); // [A, AB, F, F]
+
+  // To shuffle the elements of this list randomly, use shuffle.
+
+  // growableList.shuffle();
+  // print(growableList); // e.g. [AB, F, A, F]
+
+  bool isVowel(String char) => char.length == 1 && "AEIOU".contains(char);
+  final firstVowel =
+      growableList.firstWhere(isVowel, orElse: () => 'not vovel');
+  print(firstVowel); // ''
 }
